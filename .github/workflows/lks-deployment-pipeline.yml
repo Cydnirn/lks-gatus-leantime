@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Create config.yaml
         run: |
-          cat <<EOF>> config/config.yaml
+          cat <<EOF>> ./config/config.yaml
           alerting:
             github:
               repository-url: "https://github.com/Cydnirn/lks-gatus-leantime"
