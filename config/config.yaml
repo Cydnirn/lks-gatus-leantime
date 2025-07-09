@@ -5,7 +5,7 @@ alerting:
 
 endpoints:
   - name: Leantime
-    url: ""
+    url: "LKS-leantime-ALB-636422776.us-east-1.elb.amazonaws.com/"
     interval: 5m
     conditions:
       - "[STATUS] == 200"

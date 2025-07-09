@@ -34,10 +34,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Overwrite config.yaml on token and url
+      - name: Overwrite config.yaml on token
         run: |
-          sed -i "s/token: .*/token: ${{ secrets.TOKEN }}/" ./config/config.yaml
-          sed -i "s/url: .*/url: ${{ secrets.ALB_ENDPOINT }}/" ./config/config.yaml
+          sed -i'' "s/token: .*/token: ${{ secrets.TOKEN }}/" ./config/config.yaml
       - name: Check config.yml
         run: cat ./config/config.yaml
       - name: Check directory
