@@ -1,0 +1,50 @@
+{
+  "name": "gatus",
+  "version": "4.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --mode development",
+    "build": "vue-cli-service build --modern --mode production",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.3",
+    "@heroicons/vue": "^2.0.12",
+    "core-js": "3.22.8",
+    "vue": "3.2.37",
+    "vue-router": "4.0.16"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "5.0.4",
+    "@vue/cli-plugin-eslint": "5.0.4",
+    "@vue/cli-plugin-router": "5.0.4",
+    "@vue/cli-service": "5.0.4",
+    "@vue/compiler-sfc": "3.2.37",
+    "autoprefixer": "10.4.7",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-vue": "7.20.0",
+    "postcss": "8.4.14",
+    "tailwindcss": "^3.1.8"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "defaults",
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
