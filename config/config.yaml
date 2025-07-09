@@ -1,0 +1,19 @@
+alerting:
+  github:
+    repository-url: "https://github.com/Cydnirn/lks-gatus-leantime"
+    token: ""
+
+endpoints:
+  - name: Leantime
+    url: ""
+    interval: 5m
+    conditions:
+      - "[STATUS] == 200"
+      - "[BODY].status == UP"
+      - "[RESPONSE_TIME] < 500"
+    alerts:
+      - type: github
+        failure-threshold: 3
+        success-threshold: 5
+        send-on-resolved: true
+        description: "Server down :("

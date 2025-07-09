@@ -17,4 +17,4 @@ node_modules
 *.db-shm
 *.db-wal
 gatus
-config.yaml
+*.back

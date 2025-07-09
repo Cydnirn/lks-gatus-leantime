@@ -34,29 +34,10 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Create config.yaml
+      - name: Overwrite config.yaml on token and url
         run: |
-          cat <<EOF>> ./config/config.yaml
-          alerting:
-            github:
-              repository-url: "https://github.com/Cydnirn/lks-gatus-leantime"
-              token: ${{ secrets.TOKEN }}
-
-          endpoints:
-            - name: Leantime
-              url: ${{ secrets.ALB_ENDPOINT }}
-              interval: 5m
-              conditions:
-                - "[STATUS] == 200"
-                - "[BODY].status == UP"
-                - "[RESPONSE_TIME] < 500"
-              alerts:
-                - type: github
-                  failure-threshold: 3
-                  success-threshold: 5
-                  send-on-resolved: true
-                  description: "Server down :("
-          EOF
+          sed -i "s/token: .*/token: ${{ secrets.TOKEN }}/" ./config/config.yaml
+          sed -i "s/url: .*/url: ${{ secrets.ALB_ENDPOINT }}/" ./config/config.yaml
       - name: Check config.yml
         run: cat ./config/config.yaml
       - name: Check directory
