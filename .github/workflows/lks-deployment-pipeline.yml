@@ -57,6 +57,12 @@ jobs:
                   send-on-resolved: true
                   description: "Server down :("
           EOF
+      - name: Check config.yml
+        run: cat ./config/config.yaml
+      - name: Check directory
+        run: ls
+      - name: Check config directory
+        run: ls ./config
       - name: Build Gatus image
         run: docker build -t lks-gatus .
       - name: Login to AWS
