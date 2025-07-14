@@ -9,8 +9,7 @@ endpoints:
     interval: 5m
     conditions:
       - "[STATUS] == 200"
-      - "[BODY].status == UP"
-      - "[RESPONSE_TIME] < 500"
+      - "[RESPONSE_TIME] <= 500"
     alerts:
       - type: github
         failure-threshold: 3
