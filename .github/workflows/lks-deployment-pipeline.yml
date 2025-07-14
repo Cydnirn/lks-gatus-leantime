@@ -25,7 +25,7 @@ jobs:
         with:
           task-definition: task-definitions/lks-leantime-td.json
           service: lks-leantime-td-service
-          cluster: lks-ecs-cluster
+          cluster: lks-pm-cluster
           wait-for-service-stability: true
 
   Deploy-Gatus:
@@ -62,5 +62,5 @@ jobs:
         with:
           task-definition: task-definitions/lks-gatus-td.json
           service: lks-gatus-service
-          cluster: lks-ecs-cluster
+          cluster: lks-pm-cluster
           wait-for-service-stability: true
