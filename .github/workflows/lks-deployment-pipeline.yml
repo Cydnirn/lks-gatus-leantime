@@ -24,7 +24,7 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: task-definitions/lks-leantime-td.json
-          service: lks-leantime-service
+          service: lks-leantime-td-service
           cluster: lks-ecs-cluster
           wait-for-service-stability: true
 
